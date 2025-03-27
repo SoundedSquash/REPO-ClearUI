@@ -11,9 +11,7 @@ namespace ClearUI.Patches
         [HarmonyPostfix]
         public static void HUDCanvasAwakePostfix()
         {
-            if (!Settings.IsEnabled.Value) return;
-
-            GameObject.Find("UI/HUD/Camera Overlay").GetComponent<PostProcessLayer>().enabled = false;
+            Settings.RefreshPostProcessEffects();
         }
     }
 }
